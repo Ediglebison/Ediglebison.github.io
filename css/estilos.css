@@ -237,9 +237,9 @@ a:hover {
   transition: transform 500ms;
 }
 
-/* .img-portfolio:hover {
+ .img-portfolio:hover {
   transform: scale(1.2) rotate(-2deg);
-} */
+} 
 
 .contato .icons {
   text-align: center;
