@@ -229,7 +229,7 @@ a:hover {
   text-align: center;
 }
 
-.img-portfolio {
+.img-projetos {
   height: 180px;
   width: 100%;
   object-fit: cover;
@@ -237,7 +237,7 @@ a:hover {
   transition: transform 500ms;
 }
 
- .img-portfolio:hover {
+ .img-projetos:hover {
   transform: scale(1.2) rotate(-2deg);
 } 
 
