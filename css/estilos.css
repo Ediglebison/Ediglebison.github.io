@@ -171,19 +171,25 @@ a:hover {
 }
 
 
-#projetos .grid {
+#projetos img {
   display: grid;
   gap: 2em;
+  margin-top: 2rem;
+}
+
+#projetos ul li h3{
+  margin-top: 2rem;
+  text-align: center;
 }
 
 @media (min-width: 560px) {
-  #projetos .grid {
-    grid-template-columns: 240px 240px;
+  #projetos img {
+    grid-template-columns: 24rem 24rem;
   }
 }
 
 @media (min-width: 880px) {
-  #projetos .grid {
+  #projetos img {
     grid-template-columns: repeat(3, 260px);
     align-content: center;
     justify-content: center;
@@ -215,7 +221,7 @@ a:hover {
   width: 100%;
 }
 
-.card-back {
+#projetos img {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -229,7 +235,7 @@ a:hover {
   text-align: center;
 }
 
-#projetos .img {
+#projetos img {
   height: 180px;
   width: 100%;
   object-fit: cover;
@@ -237,7 +243,7 @@ a:hover {
   transition: transform 500ms;
 }
 
-#projetos .img:hover {
+#projetos img:hover {
   transform: scale(1.2) rotate(-2deg);
 } 
 
