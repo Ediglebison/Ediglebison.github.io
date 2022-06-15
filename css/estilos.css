@@ -116,9 +116,9 @@ a:hover {
  line-height: 1.8em;
 }
 
-.sobre,
-.contato,
-.projetos {
+#sobre,
+#contato,
+#projetos {
   padding: 2em;
   min-height: 100vh;
 }
@@ -131,9 +131,9 @@ a:hover {
   }
 }
 
-.sobre h2,
-.contato h2,
-.projetos h2 {
+#sobre h2,
+#contato h2,
+#projetos h2 {
   font-family: 'Press Start 2P', cursive;
   color: whitesmoke;
   margin-bottom: 1.5em;
@@ -171,19 +171,19 @@ a:hover {
 }
 
 
-.projetos .grid {
+#projetos .grid {
   display: grid;
   gap: 2em;
 }
 
 @media (min-width: 560px) {
-  .projetos .grid {
+  #projetos .grid {
     grid-template-columns: 240px 240px;
   }
 }
 
 @media (min-width: 880px) {
-  .projetos .grid {
+  #projetos .grid {
     grid-template-columns: repeat(3, 260px);
     align-content: center;
     justify-content: center;
@@ -225,11 +225,11 @@ a:hover {
   transform: rotateY(180deg);
 }
 
-.portfolio figure {
+#projetos figure {
   text-align: center;
 }
 
-.img-projetos {
+#projetos .img {
   height: 180px;
   width: 100%;
   object-fit: cover;
@@ -237,7 +237,7 @@ a:hover {
   transition: transform 500ms;
 }
 
- .img-projetos:hover {
+#projetos .img:hover {
   transform: scale(1.2) rotate(-2deg);
 } 
 
