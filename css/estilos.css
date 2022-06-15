@@ -118,7 +118,7 @@ a:hover {
 
 .sobre,
 .contato,
-.portfolio {
+.projetos {
   padding: 2em;
   min-height: 100vh;
 }
@@ -133,7 +133,7 @@ a:hover {
 
 .sobre h2,
 .contato h2,
-.portfolio h2 {
+.projetos h2 {
   font-family: 'Press Start 2P', cursive;
   color: whitesmoke;
   margin-bottom: 1.5em;
@@ -171,19 +171,19 @@ a:hover {
 }
 
 
-.portfolio .grid {
+.projetos .grid {
   display: grid;
   gap: 2em;
 }
 
 @media (min-width: 560px) {
-  .portfolio .grid {
+  .projetos .grid {
     grid-template-columns: 240px 240px;
   }
 }
 
 @media (min-width: 880px) {
-  .portfolio .grid {
+  .projetos .grid {
     grid-template-columns: repeat(3, 260px);
     align-content: center;
     justify-content: center;
