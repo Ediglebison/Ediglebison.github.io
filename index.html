@@ -1,109 +1,731 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ediglebison</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Ediglebison de Sousa — desenvolvedor de software, formado em Sistemas de Informação pela UFPA. Projetos, habilidades e contato."
+    />
+    <title>Ediglebison de Sousa — Desenvolvedor de Software</title>
+    <script>
+      (function () {
+        try {
+          var tema = localStorage.getItem("tema");
+          if (!tema) {
+            tema = window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+          }
+          document.documentElement.dataset.theme = tema;
+        } catch (erro) {}
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Press+Start+2P&family=Source+Code+Pro&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
-   >
-
-    <script
-      src="https://kit.fontawesome.com/6d6952c5be.js"
-      crossorigin="anonymous"
-   ></script>
+    />
+    <link rel="stylesheet" href="css/estilos.css" />
   </head>
   <body>
-    <header>
-      <nav class="menu">
-        <ul class="container">
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="site-header">
+      <nav class="nav container" aria-label="Navegação principal">
+        <a class="nav__brand" href="#conteudo">Ediglebison</a>
+        <button
+          class="nav__toggle"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+          aria-label="Abrir menu"
+        >
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+        </button>
+        <button
+          class="nav__theme"
+          id="theme-toggle"
+          type="button"
+          aria-label="Alternar tema"
+          aria-pressed="false"
+        >
+          <svg
+            class="nav__theme-icon nav__theme-icon--sun"
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+            aria-hidden="true"
+            focusable="false"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+            />
+          </svg>
+          <svg
+            class="nav__theme-icon nav__theme-icon--moon"
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+            aria-hidden="true"
+            focusable="false"
+            fill="currentColor"
+          >
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+          </svg>
+        </button>
+        <ul class="nav__menu" id="nav-menu">
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
-      <div class="titulo">
-        <h1 class="site-title">Ediglebison de Sousa</h1>
-        <h2 class="site-subtitle">jr. developer</h2>
-        <h2 class="site-subtitle">fotografo</h2>
-      </div>
     </header>
-    <section class="sobre container" id="sobre">
-      <h2>Sobre</h2>
 
-      <figure class="avatar">
-        <img src="./img/Ediglebison.jpg" alt="Ediglebison">
-      </figure>
+    <main id="conteudo">
+      <section class="hero container" aria-labelledby="hero-name">
+        <img
+          class="hero__avatar"
+          src="./img/Ediglebison.jpg"
+          alt="Foto de Ediglebison de Sousa"
+          width="160"
+          height="160"
+        />
+        <div class="hero__intro">
+          <h1 class="hero__name" id="hero-name">Ediglebison de Sousa</h1>
+          <p class="hero__role">
+            Desenvolvedor de Software • Bacharel em Sistemas de Informação
+          </p>
+          <p class="hero__tagline">Apenas um desenvolvedor em desenvolvimento!</p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#projetos">Ver projetos</a>
+            <a class="button button--ghost" href="#contato">Contato</a>
+          </div>
+        </div>
+      </section>
 
-      <p>
-        Oi, tudo Bem?
-      </p>
+      <section class="section container" id="sobre" aria-labelledby="sobre-title">
+        <h2 class="section__title" id="sobre-title">Sobre</h2>
+        <div class="sobre">
+          <p>
+            Tenho <span id="idade"></span> anos e moro em Castanhal-PA, Brasil.
+            Sou formado em <strong>Sistemas de Informação</strong> pela UFPA
+            (2026) e em <strong>Redes de Computadores</strong> pelo IFPA (2012).
+          </p>
+          <p>
+            Técnico e desenvolvedor com sólido percurso em suporte de sistemas
+            de automação e programação, com experiência em liderança e
+            treinamento de equipes. Aliando base em infraestrutura de TI com
+            habilidades em desenvolvimento de software e linguagens modernas,
+            crio soluções eficientes.
+          </p>
+          <p>“Apenas um desenvolvedor em desenvolvimento!”</p>
+        </div>
+      </section>
 
-      <p>
-        Meu nome é Ediglebison, tenho 30 anos, atualmente estou cursando Sistemas de Informação
-        pela UFPA. Já sou formado em Redes de Computadores pelo IFPA.
-      </p>
+      <section
+        class="section container"
+        id="habilidades"
+        aria-labelledby="habilidades-title"
+      >
+        <h2 class="section__title" id="habilidades-title">Habilidades</h2>
+        <ul class="skills">
+          <li class="skill-tag">Python</li>
+          <li class="skill-tag">HTML</li>
+          <li class="skill-tag">CSS</li>
+          <li class="skill-tag">JavaScript</li>
+          <li class="skill-tag">TypeScript</li>
+          <li class="skill-tag">Java</li>
+        </ul>
+        <p class="skills__note">
+          Desenvolvimento web e mobile (Android), Node.js, Python e IA.
+          Experiência também em infraestrutura de TI, redes, Help Desk e
+          sistemas de automação comercial. Inglês intermediário.
+        </p>
+      </section>
 
-      <p>
-        Tenho estudado um pouco de programação, principalmente em Python, HTML e JavaScript.
-      </p>
+      <section
+        class="section container"
+        id="projetos"
+        aria-labelledby="projetos-title"
+      >
+        <h2 class="section__title" id="projetos-title">Projetos</h2>
+        <ul class="projects">
+          <li class="card">
+            <img
+              class="card__media"
+              src="img/antropoindicadores.png"
+              alt="AntropoIndicadores — screenshot do projeto"
+              loading="lazy"
+              width="1280"
+            />
+            <div class="card__body">
+              <h3 class="card__title">AntropoIndicadores v2</h3>
+              <p class="card__desc">
+                Sistema de gestão de dados e pesquisas de campo, desenvolvimento
+                para apoiar atividades de coleta e análise de indicadores
+                antrópicos na Amazônia.
+              </p>
+              <ul class="card__tags">
+                <li>TypeScript</li>
+              </ul>
+              <div class="card__links">
+                <a
+                  class="card__link"
+                  href="https://antropoindicadores.vercel.app"
+                  target="_blank"
+                  rel="noopener"
+                  >Demo ao vivo</a
+                >
+                <a
+                  class="card__link"
+                  href="https://github.com/Ediglebison/antropoindicadores-v2"
+                  target="_blank"
+                  rel="noopener"
+                  >Código</a
+                >
+              </div>
+            </div>
+          </li>
 
-      <p>
-        Nas horas vagas também gosto de jogar e assistir alguma coisa interessante.
-      </p>
+          <li class="card">
+            <img
+              class="card__media"
+              src="img/porshe.png"
+              alt="Porshe — screenshot do projeto"
+              loading="lazy"
+              width="1280"
+            />
+            <div class="card__body">
+              <h3 class="card__title">Porshe Sales Intelligence</h3>
+              <p class="card__desc">
+                Dashboard de sales intelligence da Porsche com Agentes de IA
+                (curso DIO).
+              </p>
+              <ul class="card__tags">
+                <li>HTML</li>
+                <li>JavaScript</li>
+              </ul>
+              <div class="card__links">
+                <a
+                  class="card__link"
+                  href="https://ediglebison.github.io/porshe_sales_inteligence/"
+                  target="_blank"
+                  rel="noopener"
+                  >Demo ao vivo</a
+                >
+                <a
+                  class="card__link"
+                  href="https://github.com/Ediglebison/porshe_sales_inteligence"
+                  target="_blank"
+                  rel="noopener"
+                  >Código</a
+                >
+              </div>
+            </div>
+          </li>
 
-      <p>
-        Este site foi construído inicialmente durante a
-        <a href="https://www.alura.com.br/imersao-css">Imersão CSS da Alura</a>
-        😻
-      </p>
-      <p>
-        Para mais informações os contatos estão abaixo.
-      </p>
-    </section>
-    <section class="projetos container" id="projetos">
-      <h2>Projetos</h2>
-      <ul class="proj-list">
-        <li>
-          <a href="https://ediglebison.github.io/brejaemcasa">
-            <img src="./img/brejaemcasa.png" alt="Printscreen do site brejaemcasa">
-            <h3>BrejaEmCasa</h3>
-          </a>
-        </li>
-        <li>
-          <a href="https://ediglebison.github.io/doctorcare">
-            <img src="./img/doctorcare.png" alt="Printscreen do site doctorcare">
-            <h3>DoctorCare</h3>
-          </a>
-        </li>
-        <li>
-          <a href="https://ediglebison.github.io/Cervas/">
-            <img src="./img/Cervas.png" alt="Printscreen do site Cervas">
-            <h3>Cervas</h3>
-          </a>
-        </li>
-      </ul>
-    </section>
+          <li class="card">
+            <img
+              class="card__media"
+              src="img/lantro.png"
+              alt="LANTRO — screenshot do projeto"
+              loading="lazy"
+              width="1280"
+            />
+            <div class="card__body">
+              <h3 class="card__title">LANTRO CSV/XLS</h3>
+              <p class="card__desc">
+                Conversor web de arquivos CSV/XLS.
+              </p>
+              <ul class="card__tags">
+                <li>HTML</li>
+                <li>JavaScript</li>
+              </ul>
+              <div class="card__links">
+                <a
+                  class="card__link"
+                  href="https://ediglebison.github.io/LANTRO-CSV-XLS/"
+                  target="_blank"
+                  rel="noopener"
+                  >Demo ao vivo</a
+                >
+                <a
+                  class="card__link"
+                  href="https://github.com/Ediglebison/LANTRO-CSV-XLS"
+                  target="_blank"
+                  rel="noopener"
+                  >Código</a
+                >
+              </div>
+            </div>
+          </li>
 
-    <section class="contato container" id="contato">
-      <h2>Contato</h2>
+          <li class="card">
+            <div
+              class="card__media card__media--icon"
+              style="--card-accent: #7c3aed; --card-accent-2: #a855f7"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                width="48"
+                height="48"
+                aria-hidden="true"
+                focusable="false"
+                fill="none"
+                stroke="#fff"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13 6l-2 12" />
+              </svg>
+              <span class="card__media-name">NLW IA</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">NLW IA</h3>
+              <p class="card__desc">
+                Projeto de IA (Rocketseat NLW).
+              </p>
+              <ul class="card__tags">
+                <li>TypeScript</li>
+              </ul>
+              <div class="card__links">
+                <a
+                  class="card__link"
+                  href="https://github.com/Ediglebison/NLW-IA"
+                  target="_blank"
+                  rel="noopener"
+                  >Código</a
+                >
+              </div>
+            </div>
+          </li>
 
-      <div class="grid icons">
-        <a target="_blank" href="mailto:ediglebison@gmail.com">
-          <i class="far fa-envelope-open"></i>
-        </a>
-        <a target="_blank" href="https://github.com/Ediglebison">
-          <i class="fab fa-github"></i>
-        </a>
-        <a target="_blank" href="https://linkedin.com/in/ediglebison">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a target="_blank" href="https://instagram.com/bmxbinho">
-          <i class="fab fa-instagram"></i>
-        </a>
+          <li class="card">
+            <div
+              class="card__media card__media--icon"
+              style="--card-accent: #ea580c; --card-accent-2: #d97706"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                width="48"
+                height="48"
+                aria-hidden="true"
+                focusable="false"
+                fill="none"
+                stroke="#fff"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13 6l-2 12" />
+              </svg>
+              <span class="card__media-name">Leão Locadora</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Leão Locadora</h3>
+              <p class="card__desc">
+                Projeto de aplicação em TypeScript.
+              </p>
+              <ul class="card__tags">
+                <li>TypeScript</li>
+              </ul>
+              <div class="card__links">
+                <a
+                  class="card__link"
+                  href="https://github.com/Ediglebison/leao-locadora"
+                  target="_blank"
+                  rel="noopener"
+                  >Código</a
+                >
+              </div>
+            </div>
+          </li>
+
+          <li class="card">
+            <div
+              class="card__media card__media--icon"
+              style="--card-accent: #db2777; --card-accent-2: #e11d48"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                width="48"
+                height="48"
+                aria-hidden="true"
+                focusable="false"
+                fill="none"
+                stroke="#fff"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13 6l-2 12" />
+              </svg>
+              <span class="card__media-name">NLW Spacetime</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">NLW Spacetime</h3>
+              <p class="card__desc">
+                Projeto criado durante a NLW Spacetime da Rocketseat.
+              </p>
+              <ul class="card__tags">
+                <li>TypeScript</li>
+              </ul>
+              <div class="card__links">
+                <a
+                  class="card__link"
+                  href="https://github.com/Ediglebison/NLW-Spacetime"
+                  target="_blank"
+                  rel="noopener"
+                  >Código</a
+                >
+              </div>
+            </div>
+          </li>
+
+          <li class="card">
+            <img
+              class="card__media"
+              src="./img/brejaemcasa.png"
+              alt="Printscreen do projeto BrejaEmCasa"
+              loading="lazy"
+            />
+            <div class="card__body">
+              <h3 class="card__title">BrejaEmCasa</h3>
+              <p class="card__desc">
+                Projeto de portfólio anterior — site estático.
+              </p>
+              <ul class="card__tags">
+                <li>HTML</li>
+                <li>CSS</li>
+              </ul>
+              <div class="card__links">
+                <a
+                  class="card__link"
+                  href="https://ediglebison.github.io/brejaemcasa"
+                  target="_blank"
+                  rel="noopener"
+                  >Demo ao vivo</a
+                >
+              </div>
+            </div>
+          </li>
+
+          <li class="card">
+            <img
+              class="card__media"
+              src="./img/doctorcare.png"
+              alt="Printscreen do projeto DoctorCare"
+              loading="lazy"
+            />
+            <div class="card__body">
+              <h3 class="card__title">DoctorCare</h3>
+              <p class="card__desc">
+                Projeto de portfólio anterior — site estático.
+              </p>
+              <ul class="card__tags">
+                <li>HTML</li>
+                <li>CSS</li>
+              </ul>
+              <div class="card__links">
+                <a
+                  class="card__link"
+                  href="https://ediglebison.github.io/doctorcare"
+                  target="_blank"
+                  rel="noopener"
+                  >Demo ao vivo</a
+                >
+              </div>
+            </div>
+          </li>
+
+          <li class="card">
+            <img
+              class="card__media"
+              src="./img/Cervas.png"
+              alt="Printscreen do projeto Cervas"
+              loading="lazy"
+            />
+            <div class="card__body">
+              <h3 class="card__title">Cervas</h3>
+              <p class="card__desc">
+                Projeto de portfólio anterior — site estático.
+              </p>
+              <ul class="card__tags">
+                <li>HTML</li>
+                <li>CSS</li>
+              </ul>
+              <div class="card__links">
+                <a
+                  class="card__link"
+                  href="https://ediglebison.github.io/Cervas/"
+                  target="_blank"
+                  rel="noopener"
+                  >Demo ao vivo</a
+                >
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section
+        class="section container"
+        id="experiencia"
+        aria-labelledby="experiencia-title"
+      >
+        <h2 class="section__title" id="experiencia-title">
+          Experiência Profissional
+        </h2>
+        <ul class="timeline">
+          <li class="timeline__item">
+            <div class="timeline__head">
+              <h3 class="timeline__role">Operador de Caixa</h3>
+              <p class="timeline__meta">
+                Confra Gastro Pub — Castanhal · Abril 2024 – Outubro 2025
+              </p>
+            </div>
+            <ul class="timeline__points">
+              <li>Liderança da equipe e excelência no atendimento.</li>
+              <li>Gerenciamento estratégico de estoques.</li>
+              <li>Relatórios gerenciais.</li>
+            </ul>
+          </li>
+          <li class="timeline__item">
+            <div class="timeline__head">
+              <h3 class="timeline__role">Técnico em Informática e Desenvolvedor</h3>
+              <p class="timeline__meta">
+                Autônomo — Castanhal · Abril 2016 – Março 2024
+              </p>
+            </div>
+            <ul class="timeline__points">
+              <li>Projetos web e mobile para clientes PF e PJ.</li>
+              <li>Suporte técnico e manutenção de computadores.</li>
+            </ul>
+          </li>
+          <li class="timeline__item">
+            <div class="timeline__head">
+              <h3 class="timeline__role">Técnico em Informática</h3>
+              <p class="timeline__meta">
+                Brasil Ferro e Aço — Castanhal · Junho 2015 – Março 2016
+              </p>
+            </div>
+            <ul class="timeline__points">
+              <li>Monitoramento de bases de dados de inventário.</li>
+              <li>Manutenção de infraestrutura de redes.</li>
+              <li>Relatórios gerenciais.</li>
+            </ul>
+          </li>
+          <li class="timeline__item">
+            <div class="timeline__head">
+              <h3 class="timeline__role">Técnico em Informática</h3>
+              <p class="timeline__meta">
+                Acesso Informática — Castanhal · Julho 2012 – Maio 2015
+              </p>
+            </div>
+            <ul class="timeline__points">
+              <li>Implantação de sistemas de automação comercial.</li>
+              <li>Treinamentos de usuários e suporte técnico.</li>
+              <li>Monitoramento de inventários.</li>
+            </ul>
+          </li>
+        </ul>
+        <p class="timeline__note">
+          Veja também meu
+          <a
+            href="https://www.linkedin.com/in/ediglebison/"
+            target="_blank"
+            rel="noopener"
+            >LinkedIn</a
+          >.
+        </p>
+      </section>
+
+      <section
+        class="section container"
+        id="formacao"
+        aria-labelledby="formacao-title"
+      >
+        <h2 class="section__title" id="formacao-title">Formação</h2>
+        <ul class="list-basic">
+          <li>
+            <strong>Bacharelado em Sistemas de Informação</strong> — UFPA
+            (2025)
+          </li>
+          <li>
+            <strong>Tecnólogo em Redes de Computadores</strong> — IFPA (2012)
+          </li>
+        </ul>
+      </section>
+
+      <section
+        class="section container"
+        id="cursos"
+        aria-labelledby="cursos-title"
+      >
+        <h2 class="section__title" id="cursos-title">Cursos e Certificados</h2>
+        <ul class="list-basic">
+          <li>Imersão IA — Alura (2026)</li>
+          <li>Imersão DEV — Alura (2023)</li>
+          <li>Criando um chat inteligente em React com ChatGPT — OpenAI/UFPA (2023)</li>
+          <li>Técnicas de invasão em redes sem-fio (Wi-Fi hacking) — Udemy/União Geek (2023)</li>
+          <li>Comunicação e Oratória — Conquer (2023)</li>
+        </ul>
+      </section>
+
+      <section
+        class="section container"
+        id="contato"
+        aria-labelledby="contato-title"
+      >
+        <h2 class="section__title" id="contato-title">Contato</h2>
+        <p class="contato__intro">
+          Quer trocar uma ideia ou propor um projeto? Me encontre pelos canais
+          abaixo.
+        </p>
+        <ul class="social">
+          <li>
+            <a
+              href="https://github.com/Ediglebison"
+              target="_blank"
+              rel="noopener"
+              aria-label="GitHub"
+            >
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+                <path
+                  fill="currentColor"
+                  d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.8 18.3 5.1 18.3 5.1c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"
+                />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/ediglebison/"
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn"
+            >
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+                <path
+                  fill="currentColor"
+                  d="M20.4 20.4h-3.6v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.2V9h3.5v1.6h.1c.5-.9 1.7-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.4H3.5V9h3.6v11.4zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7c0-.9-.8-1.7-1.8-1.7z"
+                />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://instagram.com/bmxbinho"
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram"
+            >
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+                <path
+                  fill="currentColor"
+                  d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.1.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.1-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.1-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.1 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.4-.3 1-.4 2.1C2.6 9.9 2.6 10.3 2.6 12s0 2.1.1 3.3c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-3.3s0-2.1-.1-3.3c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8zm0 8a3.1 3.1 0 1 0 0-6.2 3.1 3.1 0 0 0 0 6.2zm6.3-8.2a1.1 1.1 0 1 1-2.3 0 1.1 1.1 0 0 1 2.3 0z"
+                />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://twitter.com/obinhosousa"
+              target="_blank"
+              rel="noopener"
+              aria-label="Twitter/X"
+            >
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+                <path
+                  fill="currentColor"
+                  d="M18.2 2.3h3.3l-7.2 8.3 8.5 11.3h-6.7l-5.2-6.9-6 6.9H1.6l7.7-8.9L1.2 2.3h6.8l4.7 6.3 5.5-6.3zm-1.2 17.9h1.8L7.1 4.2H5.2l11.8 16z"
+                />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:ediglebison@gmail.com" aria-label="Email">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+                <path
+                  fill="currentColor"
+                  d="M2 4h20c.6 0 1 .4 1 1v14c0 .6-.4 1-1 1H2c-.6 0-1-.4-1-1V5c0-.6.4-1 1-1zm10 7L3.2 5.5h17.6L12 11zm0 1.7L3 7v10h18V7l-9 5.7z"
+                />
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <p class="contato__email">
+          <a href="mailto:ediglebison@gmail.com">ediglebison@gmail.com</a>
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="ano"></span> Ediglebison de Sousa</p>
+        <p>Feito com HTML, CSS e JavaScript.</p>
       </div>
-    </section>
+    </footer>
+
+    <script>
+      document.getElementById("ano").textContent = new Date().getFullYear();
+
+      const elIdade = document.getElementById("idade");
+      if (elIdade) {
+        const nascimento = new Date(1993, 5, 28);
+        const hoje = new Date();
+        let idade = hoje.getFullYear() - nascimento.getFullYear();
+        const fezAniversario =
+          hoje.getMonth() > nascimento.getMonth() ||
+          (hoje.getMonth() === nascimento.getMonth() &&
+            hoje.getDate() >= nascimento.getDate());
+        if (!fezAniversario) idade--;
+        elIdade.textContent = idade;
+      }
+
+      const root = document.documentElement;
+      const themeToggle = document.getElementById("theme-toggle");
+      if (themeToggle) {
+        const aplicarTema = function (tema) {
+          root.dataset.theme = tema;
+          themeToggle.setAttribute("aria-pressed", String(tema === "dark"));
+        };
+        aplicarTema(root.dataset.theme === "dark" ? "dark" : "light");
+        themeToggle.addEventListener("click", function () {
+          const novoTema = root.dataset.theme === "dark" ? "light" : "dark";
+          aplicarTema(novoTema);
+          try {
+            localStorage.setItem("tema", novoTema);
+          } catch (erro) {}
+        });
+      }
+
+      const toggle = document.querySelector(".nav__toggle");
+      const menu = document.getElementById("nav-menu");
+      toggle.addEventListener("click", function () {
+        const open = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", String(!open));
+        toggle.setAttribute("aria-label", open ? "Abrir menu" : "Fechar menu");
+        menu.classList.toggle("is-open", !open);
+      });
+
+      menu.addEventListener("click", function (event) {
+        if (event.target.tagName === "A") {
+          toggle.setAttribute("aria-expanded", "false");
+          menu.classList.remove("is-open");
+        }
+      });
+    </script>
   </body>
 </html>

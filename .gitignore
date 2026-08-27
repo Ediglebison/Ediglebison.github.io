@@ -1,0 +1,5 @@
+.agents/
+.memory/
+opencode.json
+.ignore
+*.pdf
